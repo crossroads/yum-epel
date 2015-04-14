@@ -16,6 +16,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+package "epel-release" do
+  action :upgrade
+end
+
 node['yum-epel']['repositories'].each do |repo|
 
   if node['yum'][repo]['managed']
